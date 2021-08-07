@@ -57,4 +57,8 @@ public class Hero {
         this.powers = powers;
         this.weaknesses = weaknesses;
     }
+
+    public void deleteHero(){
+        instances.remove(id-1);
+    }
 }
