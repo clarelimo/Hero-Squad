@@ -48,4 +48,11 @@ public class HeroTest {
         Hero hero = setupNewHero();
         assertEquals("supergirl",hero.getName());
     }
+
+
+    @Test
+    public void HeroInstanceWithAge_true() throws Exception{
+        Hero hero = setupNewHero();
+        assertEquals(23,hero.getAge());
+    }
 }
