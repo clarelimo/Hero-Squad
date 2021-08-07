@@ -16,6 +16,7 @@ public class HeroTest {
 
     @After
     public void tearDown() throws Exception {
+        Hero.clearAllHeros();
     }
 
     @Test
@@ -65,5 +66,19 @@ public class HeroTest {
     public void HeroInstanceWithWeaknesses_true() throws Exception{
         Hero hero = setupNewHero();
         assertTrue(hero.getWeaknesses().contains("kryptonite"));
+    }
+
+    @Test
+    public void AllPostsReturned_true() throws Exception {
+        ArrayList<String> powers = new ArrayList<String>();
+        ArrayList<String> weaknesses = new ArrayList<String>();
+        powers.add("fly");
+        powers.add("super strength");
+        weaknesses.add("magic");
+        weaknesses.add("kryptonite");
+        Hero hero = setupNewHero();
+        Hero anotherHero = new Hero("superman",30,powers,weaknesses);
+
+        assertEquals(2,Hero.getAll().size());
     }
 }
