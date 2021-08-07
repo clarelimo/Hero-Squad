@@ -81,4 +81,21 @@ public class HeroTest {
 
         assertEquals(2,Hero.getAll().size());
     }
+
+    @Test
+    public void AllPostsContainsPosts_true() throws Exception {
+        ArrayList<String> powers = new ArrayList<String>();
+        ArrayList<String> weaknesses = new ArrayList<String>();
+        powers.add("fly");
+        powers.add("super strength");
+        weaknesses.add("magic");
+        weaknesses.add("kryptonite");
+        Hero hero = setupNewHero();
+        Hero anotherHero = new Hero("superman",30,powers,weaknesses);
+
+        assertTrue(Hero.getAll().contains(hero));
+        assertTrue(Hero.getAll().contains(anotherHero));
+    }
+
+
 }
