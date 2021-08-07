@@ -30,4 +30,16 @@ public class HeroTest {
         Hero hero = new Hero("supergirl",23,powers,weaknesses);
         assertEquals(true, hero instanceof Hero);
     }
+
+    public Hero setupNewHero() throws Exception{
+        ArrayList<String> powers = new ArrayList<String>();
+        ArrayList<String> weaknesses = new ArrayList<String>();
+        powers.add("fly");
+        powers.add("super strength");
+        weaknesses.add("destructive temper");
+        weaknesses.add("kryptonite");
+
+        Hero hero = new Hero("supergirl",23,powers,weaknesses);
+        return  hero;
+    }
 }
