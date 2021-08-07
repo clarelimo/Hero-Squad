@@ -42,4 +42,10 @@ public class HeroTest {
         Hero hero = new Hero("supergirl",23,powers,weaknesses);
         return  hero;
     }
+
+    @Test
+    public void HeroInstanceWithName_true() throws Exception{
+        Hero hero = setupNewHero();
+        assertEquals("supergirl",hero.getName());
+    }
 }
