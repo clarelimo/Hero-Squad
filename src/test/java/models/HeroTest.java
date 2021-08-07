@@ -69,7 +69,7 @@ public class HeroTest {
     }
 
     @Test
-    public void AllPostsReturned_true() throws Exception {
+    public void AllPostsReturnedCorrevtly_true() throws Exception {
         ArrayList<String> powers = new ArrayList<String>();
         ArrayList<String> weaknesses = new ArrayList<String>();
         powers.add("fly");
@@ -83,7 +83,7 @@ public class HeroTest {
     }
 
     @Test
-    public void AllPostsContainsPosts_true() throws Exception {
+    public void AllPostsContainsAllPosts_true() throws Exception {
         ArrayList<String> powers = new ArrayList<String>();
         ArrayList<String> weaknesses = new ArrayList<String>();
         powers.add("fly");
@@ -97,5 +97,29 @@ public class HeroTest {
         assertTrue(Hero.getAll().contains(anotherHero));
     }
 
+    @Test
+    public void getId_postsInstantiateWithAnID_1() throws Exception{
+        Hero hero =setupNewHero();
+        assertEquals(1,hero.getId());
+    }
 
+    @Test
+    public void findReturnsCorrectPost() throws Exception{
+        Hero hero = setupNewHero();
+        assertEquals(1, Hero.findById(hero.getId()).getId());
+    }
+
+    @Test
+    public void findReturnsCorrectPostWhenMoreThanOnePostExists() throws Exception{
+        ArrayList<String> powers = new ArrayList<String>();
+        ArrayList<String> weaknesses = new ArrayList<String>();
+        powers.add("fly");
+        powers.add("super strength");
+        weaknesses.add("magic");
+        weaknesses.add("kryptonite");
+        Hero hero = setupNewHero();
+        Hero anotherHero = new Hero("superman",30,powers,weaknesses);
+
+        assertEquals(2,Hero.findById(anotherHero.getId()).getId());
+    }
 }
