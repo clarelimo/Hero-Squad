@@ -23,4 +23,12 @@ public class Hero {
     public int getAge() {
         return age;
     }
+
+    public ArrayList<String> getPowers() {
+        return powers;
+    }
+
+    public ArrayList<String> getWeaknesses() {
+        return weaknesses;
+    }
 }
