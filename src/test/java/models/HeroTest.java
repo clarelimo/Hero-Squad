@@ -69,7 +69,7 @@ public class HeroTest {
     }
 
     @Test
-    public void AllPostsReturnedCorrevtly_true() throws Exception {
+    public void AllHerosReturnedCorrevtly_true() throws Exception {
         ArrayList<String> powers = new ArrayList<String>();
         ArrayList<String> weaknesses = new ArrayList<String>();
         powers.add("fly");
@@ -83,7 +83,7 @@ public class HeroTest {
     }
 
     @Test
-    public void AllPostsContainsAllPosts_true() throws Exception {
+    public void AllHerosContainsAllPosts_true() throws Exception {
         ArrayList<String> powers = new ArrayList<String>();
         ArrayList<String> weaknesses = new ArrayList<String>();
         powers.add("fly");
@@ -98,7 +98,7 @@ public class HeroTest {
     }
 
     @Test
-    public void getId_postsInstantiateWithAnID_1() throws Exception{
+    public void getId_herosInstantiateWithAnID_1() throws Exception{
         Hero hero =setupNewHero();
         assertEquals(1,hero.getId());
     }
@@ -110,7 +110,7 @@ public class HeroTest {
     }
 
     @Test
-    public void findReturnsCorrectPostWhenMoreThanOnePostExists() throws Exception{
+    public void findReturnsCorrectHeroWhenMoreThanOneHeroExists() throws Exception{
         ArrayList<String> powers = new ArrayList<String>();
         ArrayList<String> weaknesses = new ArrayList<String>();
         powers.add("fly");
@@ -121,5 +121,28 @@ public class HeroTest {
         Hero anotherHero = new Hero("superman",30,powers,weaknesses);
 
         assertEquals(2,Hero.findById(anotherHero.getId()).getId());
+    }
+
+    @Test
+    public void updateChangesHerosContent() throws Exception{
+        Hero hero = setupNewHero();
+        String formerName = hero.getName();
+        int formerAge = hero.getAge();
+        ArrayList<String> formerPowers = hero.getPowers();
+        ArrayList<String> formerWeaknesses = hero.getWeaknesses();
+        int formerId = hero.getId();
+
+        ArrayList<String> powers = new ArrayList<String>();
+        ArrayList<String> weaknesses = new ArrayList<String>();
+        powers.add("risk taker");
+        powers.add("fast");
+        weaknesses.add("trust too much");
+        weaknesses.add("magic");
+
+        hero.update("clare",19,powers,weaknesses);
+
+        assertEquals(formerId, hero.getId());
+        assertNotEquals(formerName, hero.getName());
+        assertNotEquals(formerAge,hero.getAge());
     }
 }
