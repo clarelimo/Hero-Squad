@@ -15,3 +15,9 @@ body{
 .nav li a:hover{
     color: aqua;
 }
+
+.btn{
+     background-color:aqua;
+     padding: 10px 30px;
+     border-radius: 50px;
+}
