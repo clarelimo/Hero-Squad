@@ -12,7 +12,7 @@
                     <p>Age:  {{age}}</p>
                 </div>
                 <div class="row">
-                    <div class="col-md-4 offset-sm-3">
+                    <div class="col-md-4 offset-sm-2">
                         <ul>
                             <h6>Powers</h6>
                             {{#each powers}}
@@ -27,6 +27,17 @@
                                 <li>{{this}}</li>
                             {{/each}}
                         </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 offset-sm-2">
+                        <p class="text-center mt-4"> <a href="/heroes/{{id}}/update"><button type="button" class="btn">Update Hero</button></a></p>
+                    </div>
+                    <div class="col-md-4">
+                        <p class="text-center mt-4"> <a href="/heroes/{{id}}/delete"><button type="button" class="btn">Delete Hero</button></a></p>
+                    </div>
+                    <div class="col-md-4">
+
                     </div>
                 </div>
             </div>
