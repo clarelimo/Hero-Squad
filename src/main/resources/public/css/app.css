@@ -7,3 +7,11 @@ body{
     font-family: 'Sansita', sans-serif;
     color: aqua;
 }
+.nav li a{
+    color:white;
+    font-size:20px;
+}
+
+.nav li a:hover{
+    color: aqua;
+}
