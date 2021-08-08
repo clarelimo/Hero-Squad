@@ -1,0 +1,24 @@
+{{#partial "content"}}
+    <h1>The Heroes List</h1>
+
+    {{#if heroes}}
+        {{#each heroes}}
+            <p>Name: {{name}}</p>
+            <p>Age: {{age}}</p>
+            <ul>
+                {{#each powers}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <ul>
+                {{#each weaknesses}}
+                    <li>{{this}}</li>
+                {{/each}}
+            </ul>
+        {{/each}}
+    {{else}}
+        <p>No Heroes!</p>
+
+    {{/if}}
+{{/partial}}
+{{>layout.hbs}}

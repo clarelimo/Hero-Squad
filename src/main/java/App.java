@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
+import models.Hero;
 import spark.ModelAndView;
 import spark.template.handlebars.HandlebarsTemplateEngine;
 import static spark.Spark.*;
@@ -15,7 +16,12 @@ public class App {
             return new ModelAndView(model, "index.hbs");
         }, new HandlebarsTemplateEngine());
 
-        post("/heros/new",(request, response) -> {
+        get("/heroes", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "heroes.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/heroes/new",(request, response) -> {
             Map<String,Object> model = new HashMap<String, Object>();
             model.put("name",request.session().attribute("name"));
             model.put("age",request.session().attribute("age"));
@@ -34,6 +40,14 @@ public class App {
             model.put("weaknesses",weaknesses);
 
            return new ModelAndView(model,"success.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/heroes/list",(request, response) -> {
+            Map<String,Object> model = new HashMap<String, Object>();
+            ArrayList<Hero> heroes = Hero.getAll();
+            model.put("heroes",heroes);
+
+            return new ModelAndView(model,"heroesList.hbs");
         }, new HandlebarsTemplateEngine());
     }
 }

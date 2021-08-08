@@ -3,7 +3,7 @@ body{
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
-    /* background-position: center; */
+    background-position: center;
     font-family: 'Sansita', sans-serif;
     color: aqua;
 }
