@@ -7,12 +7,15 @@ public class Squad {
     private String name;
     private String cause;
     private static ArrayList<Squad> instance = new ArrayList<Squad>();
+    private int id;
 
     public Squad(int maxSize, String name, String cause){
         this.maxSize = maxSize;
         this.name = name;
         this.cause = cause;
         instance.add(this);
+        this.id = instance.size();
+
     }
 
     public int getMaxSize() {
@@ -28,5 +31,16 @@ public class Squad {
     }
     public static  ArrayList<Squad> getAll(){
         return instance;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+    public static Squad findById(int id){
+        return  instance.get(id-1);
     }
 }

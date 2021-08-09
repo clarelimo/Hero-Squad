@@ -9,12 +9,14 @@ public class Hero {
     private ArrayList<String> powers = new ArrayList<String>();
     private ArrayList<String> weaknesses = new ArrayList<String>();
     private static ArrayList<Hero> instances = new ArrayList<Hero>();
+    private int squadId;
 
-    public Hero(String name, int age, ArrayList<String> powers, ArrayList<String> weaknesses){
+    public Hero(String name, int age, ArrayList<String> powers, ArrayList<String> weaknesses, int squadId){
         this.name = name;
         this.age = age;
         this.powers = powers;
         this.weaknesses = weaknesses;
+        this.squadId = squadId;
         instances.add(this);
         this.id = instances.size();
     }
@@ -60,5 +62,9 @@ public class Hero {
 
     public void deleteHero(){
         instances.remove(id-1);
+    }
+
+    public int getSquadId() {
+        return squadId;
     }
 }

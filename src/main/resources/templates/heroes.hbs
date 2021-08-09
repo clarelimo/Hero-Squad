@@ -4,7 +4,7 @@
 
 {{#partial "content"}}
     {{#if editHero}}
-        <h2>Update your hero details!</h2>
+        <h2 class="text-center">Update your hero details!</h2>
         <div class="container mt-5 offset-sm-3 pt-3 pb-3">
             <div class="row">
                 <div class="col-md-4 offset-sm-2">
@@ -87,6 +87,16 @@
                                         Low batteries
                                     </label>
                                 </div>
+                            </div>
+                        </div>
+                        <div class="row mb-2">
+                            <div class="col">
+                                <label for="squadId">Squad</label>
+                                <select class="form-control" name="squadId" id="squadId" required>
+                                    {{#each squads}}
+                                        <option value="{{id}}">{{name}}</option>
+                                    {{/each}}
+                                </select>
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Update Hero</button>
@@ -180,6 +190,19 @@
                                     <label class="form-check-label" for="lowbatteries">
                                         Low batteries
                                     </label>
+                                </div>
+                            </div>
+                            <div class="row mb-2">
+                                <div class="col">
+                                    <div class="md-form">
+                                        <label for="squadId">Squad</label>
+                                        <select class="form-control" name="squadId" id="squadId" required>
+                                            {{#each squads}}
+                                                <option value="{{id}}">{{name}}</option>
+                                            {{/each}}
+                                        </select>
+                                        <!--                    <a href="/squad/new"><p class="text white">Create your own squad</p></a>-->
+                                    </div>
                                 </div>
                             </div>
                         </div>
