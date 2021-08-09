@@ -13,7 +13,7 @@ There are no known bugs.
 ## Technologies Used
 * Java
 * Spark
-* Html
+* Handlebars
 * CSS
 * Bootstrap
 ## Support and contact details
