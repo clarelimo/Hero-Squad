@@ -3,6 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import models.Hero;
+import models.Squad;
 import spark.ModelAndView;
 import spark.QueryParamsMap;
 import spark.template.handlebars.HandlebarsTemplateEngine;
@@ -110,5 +111,30 @@ public class App {
 
             return new ModelAndView(model, "success.hbs");
         }, new HandlebarsTemplateEngine());
+
+        //squad
+        get("/squads", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            return new ModelAndView(model, "squad.hbs");
+        },new HandlebarsTemplateEngine());
+
+        post("/squads/new", (request, response) -> {
+            Map<String, Object> model = new HashMap<String, Object>();
+            String name = request.queryParams("name");
+            int maxSize = Integer.parseInt(request.queryParams("maxSize"));
+            String cause = request.queryParams("cause");
+            Squad squad = new Squad(maxSize,name,cause);
+            return new ModelAndView(model, "successSquad.hbs");
+        }, new HandlebarsTemplateEngine());
+
+        get("/squads/list", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            ArrayList<Squad> squads = Squad.getAll();
+            model.put("squads", squads);
+
+            return new ModelAndView(model, "squadList.hbs");
+        }, new HandlebarsTemplateEngine());
+
+
     }
 }
