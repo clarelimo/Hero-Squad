@@ -28,7 +28,7 @@ public class HeroTest {
         weaknesses.add("destructive temper");
         weaknesses.add("kryptonite");
 
-        Hero hero = new Hero("supergirl",23,powers,weaknesses);
+        Hero hero = new Hero("supergirl",23,powers,weaknesses,1);
         assertEquals(true, hero instanceof Hero);
     }
 
@@ -40,7 +40,7 @@ public class HeroTest {
         weaknesses.add("destructive temper");
         weaknesses.add("kryptonite");
 
-        Hero hero = new Hero("supergirl",23,powers,weaknesses);
+        Hero hero = new Hero("supergirl",23,powers,weaknesses,1);
         return  hero;
     }
 
@@ -52,7 +52,7 @@ public class HeroTest {
         weaknesses.add("magic");
         weaknesses.add("kryptonite");
 
-        Hero anotherHero = new Hero("superman",30,powers,weaknesses);
+        Hero anotherHero = new Hero("superman",30,powers,weaknesses,1);
 
         return  anotherHero;
     }

@@ -1,0 +1,32 @@
+{{#partial "styles"}}
+    <link rel="stylesheet" href="/css/index.css">
+{{/partial}}
+
+{{#partial "content"}}
+    <div class="container mt-5 text-center w-75">
+        <h1>Tell the world about your hero!</h1>
+        <hr>
+        <div class="card mt-5">
+            <div class="card-header">
+                Hero Quotes
+            </div>
+            <div class="card-body">
+                <blockquote class="blockquote mb-0">
+                    <h5 class="text-muted">A hero is an ordinary individual who finds the strength to persevere and endure in spite of overwhelming obstacles.</h5>
+                    <footer class="blockquote-footer mt-3">Christopher Reeve<cite title="Source Title"></cite></footer>
+                </blockquote>
+            </div>
+        </div>
+        <div class="container offset-md-3 text-center">
+            <div class="row mt-5 ">
+                <div class="col-md-3 mb-1">
+                    <a href="/heroes"><button type="button" class="btn">Add Hero</button></a>
+                </div>
+                <div class="col-md-3">
+                    <a href="/squads"><button type="button" class="btn">Add Squad</button></a>
+                </div>
+            </div>
+        </div>
+   </div>
+{{/partial}}
+{{>layout.hbs}}
